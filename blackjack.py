@@ -120,6 +120,12 @@ def play_blackjack():
     # Display cards
     show_cards(player, dealer, is_final_hand)
 
+    # Check for blackjack
+    if player["total"] == 21 and len(player["cards"]) == 2:
+        print("You have Blackjack!")
+        is_final_hand = True
+        show_cards(player, dealer, is_final_hand)
+
     # While loop to allow user to hit or stand
     while not is_final_hand:
         add_card = input("Type 'y' to get another card, type 'n' to pass: ").lower()
