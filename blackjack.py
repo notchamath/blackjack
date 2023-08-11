@@ -35,7 +35,6 @@ from art import logo
 import os
 import random
 
-cards = ["ace", 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
 # Clear console
 def clear(): os.system("clear")
@@ -71,6 +70,7 @@ def show_cards(player, dealer, is_final_hand):
 
 # Chooses cards for dealer and player randomly
 def choose_card(num_of_cards, person):
+    cards = ["ace", 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
     for i in range(num_of_cards):
         card = random.choice(cards)
@@ -100,11 +100,11 @@ def play_blackjack():
 
     dealer = {
         "cards": [],
-        "total": 0
+        "total": 0,
     }
     player = {
         "cards": [],
-        "total": 0
+        "total": 0,
     }
     is_final_hand = False
 
@@ -120,7 +120,7 @@ def play_blackjack():
     # Display cards
     show_cards(player, dealer, is_final_hand)
 
-    # While loop to allow user to get hit or stand
+    # While loop to allow user to hit or stand
     while not is_final_hand:
         add_card = input("Type 'y' to get another card, type 'n' to pass: ").lower()
 
@@ -146,7 +146,7 @@ def play_blackjack():
             show_cards(player, dealer, is_final_hand)
 
 
-
+# While loop to give user the option to start game or leave
 while True:
     is_playing = input("Do you want to play a game of Blackjack? Type 'y' or 'n': ").lower()
 
